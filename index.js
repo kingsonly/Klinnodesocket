@@ -5,7 +5,7 @@ const axios = require("axios").create({baseUrl: "https://jsonplaceholder.typicod
 // App setup
 const PORT = 5000;
 const app = express();
-const server = app.listen(PORT, function () {
+const server = app.listen(process.env.PORT || PORT, function () {
   console.log(`Listening on port ${PORT}`);
   console.log(`http://localhost:${PORT}`);
 });
