@@ -41,10 +41,11 @@ io.on("connection", function (socket) {
     socket.on('find-nearby-rider', function(orderDetails) {
          // connect to php using axios
           // send to nearest rider
-          io.to(userSocket[socket.username]).emit('set-room', userSocket);
+          io.to(userSocket["rider_username"]).emit('request_sent_to_nearby_rider', orderDetails);
 
           // send back to user
-          io.to(userSocket[socket.username]).emit('set-room', userSocket);
+          //io.to(userSocket[socket.username]).emit('awaiting_rider_approval', riderDetails);
+          io.to(userSocket[socket.username]).emit('awaiting_rider_approval', orderDetails);
 
 
   	}); //end of set-user-data event.

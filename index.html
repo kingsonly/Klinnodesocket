@@ -28,12 +28,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
     <script>
-    var socket = io('http://localhost:5000');
+    var socket = io('https://squeakyklin.herokuapp.com');
 		socket.on('connect',function(){
-			socket.emit('set-user-data',"username");
+
+			socket.emit('set-user',"rider_username");
 
 			socket.on('set-room',function(data){
-                //alert(data)
+                alert(data)
 				console.log(data)
 			});
 
